@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Comment, type: :model do
   it "requires an admin author" do
-    citizen = User.create!(email: "citizen@example.com", password: "password123", role: :citizen)
+    citizen = User.create!(email: "comment-citizen@example.com", password: "password123", role: :citizen)
     issue = Issue.create!(
       title: "Noise issue",
       description: "Loud music every night.",

@@ -27,7 +27,7 @@ RSpec.describe Issue, type: :model do
   end
 
   it "does not allow assignment to a citizen" do
-    citizen = User.create!(email: "citizen@example.com", password: "password123", role: :citizen)
+    citizen = User.create!(email: "issue-citizen@example.com", password: "password123", role: :citizen)
     issue = described_class.new(
       title: "Road problem",
       description: "A pothole is forming.",

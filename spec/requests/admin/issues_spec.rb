@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Admin issues", type: :request do
-  let(:admin) { User.create!(email: "admin@example.com", password: "password123", role: :admin) }
-  let(:citizen) { User.create!(email: "citizen@example.com", password: "password123", role: :citizen) }
+  let(:admin) { User.create!(email: "issues-admin@example.com", password: "password123", role: :admin) }
+  let(:citizen) { User.create!(email: "issues-citizen@example.com", password: "password123", role: :citizen) }
   let!(:issue) do
     Issue.create!(
       title: "Broken glass",

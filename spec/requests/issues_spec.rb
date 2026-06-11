@@ -21,17 +21,18 @@ RSpec.describe "Issues", type: :request do
   end
 
   it "rejects invalid email addresses" do
-    post issues_path, params: {
-      issue: {
-        title: "Overflowing bin",
-        description: "The bin is overflowing.",
-        category: "waste",
-        location: "Library",
-        contact_email: "not-an-email"
+    expect {
+      post issues_path, params: {
+        issue: {
+          title: "Overflowing bin",
+          description: "The bin is overflowing.",
+          category: "waste",
+          location: "Library",
+          contact_email: "not-an-email"
+        }
       }
-    }
+    }.not_to change(Issue, :count)
 
     expect(response).to have_http_status(422)
-    expect(Issue.count).to eq(0)
   end
 end

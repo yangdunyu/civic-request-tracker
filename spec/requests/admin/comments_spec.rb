@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Admin comments", type: :request do
   it "allows admins to add internal notes" do
-    admin = User.create!(email: "admin@example.com", password: "password123", role: :admin)
+    admin = User.create!(email: "comments-admin@example.com", password: "password123", role: :admin)
     issue = Issue.create!(
       title: "Street light out",
       description: "The street light outside the library is out.",
