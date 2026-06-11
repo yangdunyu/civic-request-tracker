@@ -2,9 +2,9 @@
 
 **A Rails MVP for citizen service requests and public sector issue triage.**
 
-CivicFlow helps residents report local service issues and gives an internal team a lightweight workflow to triage, assign, update and resolve them. It is built as a portfolio-ready Ruby on Rails full-stack application with PostgreSQL, Hotwire, Tailwind, Devise, Pundit, Action Mailer, Active Storage, RSpec, Docker and GitHub Actions.
+CivicFlow helps residents report local service issues and gives an internal team a lightweight workflow to triage, assign, update and resolve them. It is built as a production-style Ruby on Rails full-stack application with PostgreSQL, Hotwire, Tailwind, Devise, Pundit, Action Mailer, Active Storage, RSpec, Docker and GitHub Actions.
 
-The project was designed to mirror the kind of bespoke, impact-driven public sector software a Rails consultancy might build: small enough to understand quickly, but complete enough to demonstrate real workflow thinking.
+The product focuses on a practical civic workflow: small enough to understand quickly, but complete enough to show how public submissions become trackable internal service work.
 
 ## Product Walkthrough
 
@@ -44,9 +44,9 @@ User impact:
 
 The internal team can immediately see what is new, what is being triaged, what is in progress and what has been resolved. This turns citizen submissions into actionable service work instead of a static inbox.
 
-## 60-Second Demo Path
+## Workflow Walkthrough
 
-Use this path when showing the project to an interviewer:
+Use this path to understand the main product flow:
 
 1. Open the citizen form and submit a realistic issue, for example broken glass near a school bus stop.
 2. Confirm the request lands in the system with status `New`.
@@ -70,7 +70,7 @@ password123
 - **Rails-native full-stack delivery**: ERB views, Hotwire, Tailwind and Rails conventions keep the app simple, fast and maintainable.
 - **Public sector fit**: the domain is service delivery, accessibility, transparency and practical operational tooling.
 - **AI used where it helps the workflow**: a deterministic AI triage service summarizes requests and suggests category/priority without making the MVP dependent on an API key.
-- **Interview-ready engineering signals**: role-based authorization, image uploads, mailers, tests, CI, Docker and a written acceptance checklist.
+- **Engineering completeness**: role-based authorization, image uploads, mailers, tests, CI, Docker and a written acceptance checklist.
 
 ## Features
 
