@@ -1,0 +1,48 @@
+<%= form_with model: issue, local: true, html: { multipart: true, class: "mt-8 space-y-6 rounded-lg border border-slate-200 bg-white p-6" } do |form| %>
+  <% if issue.errors.any? %>
+    <div class="rounded-md border border-rose-200 bg-rose-50 p-4" role="alert">
+      <h2 class="font-semibold text-rose-900">Please fix the following fields</h2>
+      <ul class="mt-2 list-disc pl-5 text-sm text-rose-800">
+        <% issue.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, class: "block text-sm font-medium text-slate-800" %>
+    <%= form.text_field :title, required: true, class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/20" %>
+  </div>
+
+  <div>
+    <%= form.label :description, class: "block text-sm font-medium text-slate-800" %>
+    <%= form.text_area :description, rows: 6, required: true, class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/20" %>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <%= form.label :category, class: "block text-sm font-medium text-slate-800" %>
+      <%= form.select :category, Issue.categories.keys.reject { |category| category == "public_safety" }.map { |category| [category.humanize.titleize, category] }, {}, class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm" %>
+    </div>
+
+    <div>
+      <%= form.label :location, class: "block text-sm font-medium text-slate-800" %>
+      <%= form.text_field :location, required: true, class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm" %>
+    </div>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div>
+      <%= form.label :contact_email, "Contact email", class: "block text-sm font-medium text-slate-800" %>
+      <%= form.email_field :contact_email, required: true, class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm" %>
+    </div>
+
+    <div>
+      <%= form.label :image, "Photo", class: "block text-sm font-medium text-slate-800" %>
+      <%= form.file_field :image, accept: "image/png,image/jpeg,image/webp", class: "mt-2 w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm" %>
+    </div>
+  </div>
+
+  <%= form.submit "Submit request", class: "rounded-md bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" %>
+<% end %>

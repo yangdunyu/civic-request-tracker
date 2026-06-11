@@ -1,0 +1,3 @@
+IssueMailer#status_updated
+
+Hi, find me in app/views/issue_mailer/status_updated

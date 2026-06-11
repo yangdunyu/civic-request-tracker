@@ -1,0 +1,19 @@
+<section class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
+  <div>
+    <p class="text-sm font-semibold uppercase tracking-wide text-teal-700">Public service request</p>
+    <h1 class="mt-2 text-3xl font-bold text-slate-950">Tell us what needs attention</h1>
+    <p class="mt-3 max-w-2xl text-slate-600">Submit a local issue and the internal team can triage, assign and resolve it through CivicFlow.</p>
+
+    <%= render "form", issue: @issue %>
+  </div>
+
+  <aside class="h-fit rounded-lg border border-slate-200 bg-white p-5">
+    <h2 class="text-base font-semibold text-slate-950">What happens next</h2>
+    <ol class="mt-4 space-y-3 text-sm text-slate-600">
+      <li>1. Your request is created with status New.</li>
+      <li>2. AI triage drafts a summary, category and priority.</li>
+      <li>3. An admin reviews, assigns and updates the status.</li>
+      <li>4. You receive an email when the status changes.</li>
+    </ol>
+  </aside>
+</section>
