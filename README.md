@@ -6,24 +6,56 @@ CivicFlow helps residents report local service issues and gives an internal team
 
 The project was designed to mirror the kind of bespoke, impact-driven public sector software a Rails consultancy might build: small enough to understand quickly, but complete enough to demonstrate real workflow thinking.
 
-## Screenshots
+## Product Walkthrough
 
-### Citizen Request Form
+The screenshots below are ordered as a short product story. They show what each user sees, what action they can take, and why that step matters in a public service workflow.
+
+### 1. Citizen Submits A Service Request
+
+Residents start on a focused submission screen. The form captures the minimum information an internal team needs to triage the issue: title, description, category, location, contact email and an optional photo.
+
+What this demonstrates:
+
+- A citizen-facing workflow that does not require account creation
+- Accessible labelled inputs for the core reporting flow
+- Active Storage-ready photo upload
+- A clear expectation of what happens after submission
 
 ![Citizen submit page](docs/screenshots/citizen-submit.png)
 
-### Admin Triage Dashboard
+User impact:
+
+The resident can quickly report a local problem without needing to understand the internal process. The right-hand panel makes the workflow transparent: submit, triage, assign, update by email.
+
+### 2. Admin Reviews Requests On A Triage Dashboard
+
+Admins see incoming requests grouped by status. The dashboard is designed for scanning: search and filters sit above the work board, while each card shows the request title, location, category and priority.
+
+What this demonstrates:
+
+- Internal workflow management with a Kanban-style status board
+- Search and filtering for operational teams
+- AI-assisted triage output surfaced as category and priority
+- A Rails full-stack admin interface without a separate SPA
 
 ![Admin dashboard](docs/screenshots/admin-dashboard.png)
 
+User impact:
+
+The internal team can immediately see what is new, what is being triaged, what is in progress and what has been resolved. This turns citizen submissions into actionable service work instead of a static inbox.
+
 ## 60-Second Demo Path
 
-1. Submit a public service request from the citizen-facing form.
-2. Sign in as an admin.
-3. Find the request on the Kanban dashboard.
-4. Review the AI-generated summary, category and priority.
-5. Assign an owner, add an internal note and move the request to `In Progress`.
-6. Confirm a status update email is generated for the submitter.
+Use this path when showing the project to an interviewer:
+
+1. Open the citizen form and submit a realistic issue, for example broken glass near a school bus stop.
+2. Confirm the request lands in the system with status `New`.
+3. Sign in as an admin.
+4. Find the new request on the Kanban dashboard.
+5. Open the request and review the AI-generated summary, suggested category and priority.
+6. Assign an owner and add an internal note.
+7. Move the request to `In Progress`.
+8. Confirm a status update email is generated for the submitter.
 
 Demo admin account:
 
